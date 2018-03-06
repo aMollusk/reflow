@@ -2,39 +2,31 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reflow demo</title>
 </head>
 
 <style>
   #app {
-    background: #3d3d3d;
     height: auto;
     transition: all 2s;
     overflow: hidden;
   }
+  #app div {
+    background: #3d3d3d;
+    height: 400px;
+  }
 </style>
 <body>
   <div id="app">
-    <div>dfas</div>
-    <div>dfas</div>
-    <div>dfas</div>
-    <div>dfas</div>
-    <div>dfas</div>
-    <div>dfas</div>
+    <div>demo</div>
   </div>
   <script>
     let app = document.getElementById('app');
-    
-
     app.addEventListener('click', function() {
       this.style.height = this.offsetHeight + 'px';
-      this.style.height = this.offsetHeight + 'px'; // Commenting this will make this fail.
-      this.style.height = '10px';
+      this.offsetHeight; // Accessing this property re-paints
+      this.style.height = '0px';
     })
-
-
   </script>
 </body>
 </html>
